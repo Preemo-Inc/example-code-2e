@@ -43,6 +43,10 @@ class Vector:
     def __abs__(self):
         return math.hypot(self.x, self.y)
 
+
+    # def __eq__(self, __value: object) -> bool:
+    #     return self.x == __value.x and self.y == __value.y
+
     def __bool__(self):
         return bool(abs(self))
 
@@ -50,6 +54,23 @@ class Vector:
         x = self.x + other.x
         y = self.y + other.y
         return Vector(x, y)
+    
+    def __sub__(self, other):
+        x = self.x - other.x
+        y = self.y - other.y
+        return Vector(x, y)
 
     def __mul__(self, scalar):
         return Vector(self.x * scalar, self.y * scalar)
+    
+    def __str__(self) -> str:
+        return f"({self.x}, {self.y})"
+
+print(Vector(1, 1) == Vector(1,1)) # false
+
+v1 = Vector(2, 4)
+v2 = Vector(2, 1)
+v1 + v2
+print(v1 - v2)
+print(Vector(4, 5))
+print(type('Hello There'))
