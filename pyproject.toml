@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "example-code-2e"
+version = "0.1.0"
+description = "Poetry-fied repo for the Fluent Python examples"
+authors = ["gradient.ai devs"]
+readme = "README.md"
+packages = [{include = "example_code_2e"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.26.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
