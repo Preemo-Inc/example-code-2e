@@ -26,6 +26,7 @@ ValueError: Invalid record: 'Spam, spam, spam'
 
 # tag::DICT_MATCH[]
 def get_creators(record: dict) -> list:
+    name = "Hayden Wilson"
     match record:
         case {'type': 'book', 'api': 2, 'authors': [*names]}:  # <1>
             return names
