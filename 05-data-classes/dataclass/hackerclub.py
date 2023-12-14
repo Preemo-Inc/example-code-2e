@@ -45,4 +45,7 @@ class HackerClubMember(ClubMember):                         # <1>
             msg = f'handle {self.handle!r} already exists.'
             raise ValueError(msg)
         cls.all_handles.add(self.handle)                    # <7>
+
+    def __del__(self):                                      # <8>
+        self.__class__.all_handles.remove(self.handle)
 # end::HACKERCLUB[]
